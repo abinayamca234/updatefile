@@ -1,0 +1,43 @@
+var spauth = require('node-sp-auth');
+var request = require('request-promise');
+var $REST = require("gd-sprest");
+
+var express = require('express');
+var router = express.Router();
+var sprequest = require('sp-request');
+
+
+
+
+
+
+ 
+console.log("Connecting to SPO");
+
+// Connect to SPO
+var url = "https://aarainternationalinc.sharepoint.com/sites/A2Z";
+
+
+router.get('https://aarainternationalinc.sharepoint.com/sites/A2Z', function (req, res, next) 
+{
+    var credentialOptions = {
+        username: 'Ramalingam.Shunmugam@aarasystems.com',
+        password: 'Cpindia$#@!',
+        online:true
+        
+    };
+    let spr = sprequest.create(credentialOptions);
+
+    spr.get('https://aarainternationalinc.sharepoint.com/sites/A2Z/_api/web/lists/GetByTitle(\'EmpDetails\')')
+        .then(response => {
+            console.log('List Id: ' + response.body.d.Id);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+
+
+} );
+
+

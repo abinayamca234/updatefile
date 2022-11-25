@@ -1,0 +1,67 @@
+  A2Z link
+
+
+https://aarainternationalinc.sharepoint.com/sites/A2Z/SitePages/Black.aspx
+
+
+
+
+"start": "node index.js"
+
+
+var spr = sprequest.create(context);
+console.log("Connecting to SPO");
+
+// Connect to SPO
+var url = "https://aarainternationalinc.sharepoint.com/sites/A2Z";
+spauth.getAuth(url, {
+    username: "ramalingam.shunmugam@aarasystems.com",
+    password: "Cpindia$#@!",
+    online: true
+}).then(options => {
+    // Log
+    console.log("Connected to SPO");
+
+   
+
+
+});
+
+
+
+
+------------
+
+
+
+const express = require('express')
+const app = express()
+const port = 2000
+ const express = require('express')
+const app = express()
+const port = 2000
+
+
+
+
+app.get("/", (req,res) => {
+    res.send("yooooooo")
+ }
+ )
+app.listen(port, () => {
+    console.log('Listening on port ${port}')
+
+}
+
+
+
+
+
+)
+
+
+
+
+
+
+
